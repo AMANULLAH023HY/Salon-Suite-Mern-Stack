@@ -1,0 +1,23 @@
+{
+  "name": "salon-suite-mern-stack",
+  "version": "1.0.0",
+  "description": "Salon Suite: A MERN stack solution for streamlined salon management. Automate reminders, manage expenses, and enhance billing with ease.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raftaarrashedin/Salon-Suite-Mern-Stack.git"
+  },
+  "keywords": [
+    "salon",
+    "mern_stack_app"
+  ],
+  "author": "raftaar rashedin, md amanullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raftaarrashedin/Salon-Suite-Mern-Stack/issues"
+  },
+  "homepage": "https://github.com/raftaarrashedin/Salon-Suite-Mern-Stack#readme"
+}
