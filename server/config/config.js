@@ -1,20 +1,21 @@
-import mongoose from "mongoose";
+const {DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME } = process.env
 
-mongoose.set("strictQuery", false);
+// const mysql = require('mysql')
+import mysql from 'mysql'
 
-const connectionToDB = async () => {
-  try {
-    const { connection } = await mongoose.connect(
-      process.env.MONGO_URI || `mongodb://127.0.0.1:27017/salon`
-    );
+const conn = mysql.createConnection({
 
-    if (connection) {
-      console.log(`Connected to mongodb ${connection.host}`);
-    }
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+    host : DB_HOST,
+    user : DB_USERNAME,
+    password : DB_PASSWORD,
+    database : DB_NAME
 
-export default connectionToDB;
+})
+
+conn.connect((error) => {
+    if(error) throw error;
+
+    console.log(DB_NAME+ 'Database Connected!')
+})
+
+export default conn;

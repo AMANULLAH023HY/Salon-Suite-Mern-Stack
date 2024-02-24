@@ -1,9 +1,21 @@
 import app from "./app.js";
-import connectionToDB from "./config/config.js";
+
+import express from "express";
+const exapp = express();
+
+import dotenv from "dotenv"
+dotenv.config()
+
+import config from "./config/config.js"
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, async () => {
-  await connectionToDB();
-  console.log(`App is running at http:localhost:${PORT} `);
-});
+// Error Handling
+exapp.use((errors,req,res,next) => {
+  errors.statusCode = errors.statusCode || 500;
+  errors.message = errors.message || "Internal Server Error";
+  res.status(errors.statusCode).json({
+    message : errors.message
+  });
+})
+exapp.listen(5000, () => console.log('Server is running on 5000 port number'))
