@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` text COLLATE utf8mb4_general_ci NOT NULL,
+  `confirm_password` text COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+# Insertion for testing purpose 
+INSERT INTO `user_registration`(`id`, `name`, `email`, `password`, `confirm_password`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')

@@ -8,6 +8,12 @@ dotenv.config()
 
 import config from "./config/config.js"
 
+import auth_routes from './routes/auth_routes.js'
+exapp.use(bodyParser.json())
+
+exapp.use(cors())
+exapp.use('/api', auth_routes);
+
 const PORT = process.env.PORT || 5000;
 
 // Error Handling
