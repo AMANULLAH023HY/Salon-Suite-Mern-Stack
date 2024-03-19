@@ -2,9 +2,7 @@ import registrationValidation from 'express-validator'
 import bcrypt from 'bcryptjs'
 import db from '../config/config.js'
 import jwt from 'jsonwebtoken'
-
 const JWT_SECRET = process.env 
-
 const register = (req,res) => {
     db.query(
         `SELECT * FROM user_registration WHERE LOWER(email) = LOWER(${db.escape(
